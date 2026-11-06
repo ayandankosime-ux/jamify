@@ -12,7 +12,7 @@ export function LocalFilesPage() {
 
         <main class="main-content">
 
-          <Header pageName='Local Files'/>
+          <Header pageName='Local Files' placeholder='Search local files...'/>
 
           <section class="import-section">
             <div class="drop-zone" id="dropZone">

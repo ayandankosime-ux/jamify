@@ -1,4 +1,4 @@
-const songs = [{
+export const songs = [{
   title: 'Stand Tall',
   artist: 'Rapsody',
   image: 'starter-code/images/image-1.jpeg',

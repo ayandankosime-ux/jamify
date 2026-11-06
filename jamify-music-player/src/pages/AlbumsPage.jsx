@@ -12,7 +12,7 @@ export function AlbumsPage() {
 
         <main class="main-content">
 
-          <Header pageName='Albums'/>
+          <Header pageName='Albums' placeholder='Search albums...'/>
 
           <section class="albums-grid">
 

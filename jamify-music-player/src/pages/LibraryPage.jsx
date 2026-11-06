@@ -1,6 +1,7 @@
 import { Header } from './components/Header'
 import { BottomPlaybar } from './components/BottomPlaybar'
-import { Sidebar } from './components/Sidebar'
+import { Sidebar } from './components/Sidebar';
+import { songs } from '../data/data';
 
 
 export function LibraryPage() {
@@ -12,7 +13,7 @@ export function LibraryPage() {
 
         <main class="main-content">
 
-          <Header pageName='Your Library'/>
+          <Header pageName='Your Library' placeholder='Search local tracks...'/>
 
           <section class="collection-grid">
             <div class="card card-1">

@@ -14,7 +14,7 @@ export function ArtistsPage() {
 
         <main class="main-content">
 
-          <Header pageName='Artists'/>
+          <Header pageName='Artists' placeholder='Search artists...'/>
 
           <section class="artists-grid">
 
