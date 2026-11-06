@@ -3,35 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jamify - Spotify Clone</title>
+  <title>Music Player</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bottom-player">
-    <div class="song-info">
-      <img class="song-image" src="song-image.gif" alt="song-image">
-      <div class="song-details">
-        <h4 class="song-name">Song Name</h4>
-        <p class="song-artist">Artist Name</p>
-      </div>
-    </div>
 
-    <div class="player-controls">
-      <div class="control-buttons">
-
-        <button class="btn btn-prev">
-          <img class="img prev-img"  src="music-player-icons/back.png" alt="previous button">
-        </button>
-        <button class="btn btn-play">
-          <img class="img play-img"  src="music-player-icons/play.png" alt="play button">
-        </button>
-        <button class="btn btn-next">
-          <img class="img next-img" src="music-player-icons/next.png" alt="next button">
-        </button>
+  <div class="app-container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">|||i||</span>
       </div>
 
-      <input class="progress-bar" id="progressBar" type="range">
-    </div>
+      <nav class="nav-section">
+        <p class="menu-label">Menu</p>
+        <ul>
+          <li class="active"><a href="#">News</a></li>
+          <li><a href="#">Songs</a></li>
+          <li><a href="#">Albums</a></li>
+          <li><a href="#">Artists</a></li>
+          <li><a href="#">Liked</a></li>
+          <li><a href="#">Radio</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-section">
+        <p class="menu-label">PLAYLISTS</p>
+        <ul>
+          <li><a href="#">Classic</a></li>
+          <li><a href="#">Romantic</a></li>
+          <li><a href="#">Sad Song</a></li>
+          <li><a href="#" class="add-btn">+ Add</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+      
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <h1>NEW COLLECTION <br>FOR YOU</h1>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+      </header>
+
+      <!-- COLLECTION CARDS -->
+      <section class="collection-grid">
+        <div class="card card-1">
+          <span class="time-tag">12 hours ago</span>
+          <div class="card-info">
+            <h3>Doomed</h3>
+            <p>Moses Sumney</p>
+          </div>
+        </div>
+        <div class="card card-2">
+          <span class="time-tag">3 Days ago</span>
+          <div class="card-info">
+            <h3>James Curran</h3>
+            <p>Los Angeles</p>
+          </div>
+        </div>
+        <div class="card card-3">
+          <span class="time-tag">10 Days ago</span>
+          <div class="card-info">
+            <h3>Adam Grason</h3>
+            <p>Orlando</p>
+          </div>
+        </div>
+        <div class="card card-4">
+          <span class="time-tag">12 Days ago</span>
+          <div class="card-info">
+            <h3>Virgil Pana</h3>
+            <p>Bucharest</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTENT SPLIT (TOP SONGS + VIRAL VIDEO) -->
+      <section class="dashboard-split">
+        
+        <!-- TOP SONGS TABLE -->
+        <div class="top-songs">
+          <h2>Top Song</h2>
+          <table class="song-list">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Track & Artist</th>
+                <th>Album</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="song-row" data-src="song1.mp3">
+                <td>01</td>
+                <td class="track-details">
+                  <div class="thumb"></div>
+                  <div>
+                    <p class="title">Doomed</p>
+                    <p class="artist">Moses Sumney</p>
+                  </div>
+                </td>
+                <td>Arofan</td>
+                <td>4:30</td>
+              </tr>
+              <tr class="song-row" data-src="song2.mp3">
+                <td>02</td>
+                <td class="track-details">
+                  <div class="thumb"></div>
+                  <div>
+                    <p class="title">James Curran</p>
+                    <p class="artist">Los Angeles</p>
+                  </div>
+                </td>
+                <td>Amusing Dragon</td>
+                <td>3:00</td>
+              </tr>
+              <tr class="song-row" data-src="song3.mp3">
+                <td>03</td>
+                <td class="track-details">
+                  <div class="thumb"></div>
+                  <div>
+                    <p class="title">Adam Grason</p>
+                    <p class="artist">Orlando</p>
+                  </div>
+                </td>
+                <td>Kasara</td>
+                <td>2:30</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- FEATURED VIDEO -->
+        <div class="viral-video">
+          <h2>Viral video this week</h2>
+          <div class="video-card">
+            <button class="play-overlay-btn">&#9654;</button>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- BOTTOM AUDIO PLAYER BAR -->
+    <footer class="player-bar">
+      
+      <div class="now-playing">
+        <div class="player-thumb"></div>
+        <div class="player-meta">
+          <p class="player-title">James Curran</p>
+          <p class="player-artist">Los Angeles</p>
+        </div>
+        <button class="like-btn">&#9825;</button>
+      </div>
+
+      <div class="player-controls-container">
+        <div class="controls-buttons">
+          <button id="shuffleBtn">&#128256;</button>
+          <button id="prevBtn">&#9198;</button>
+          <button id="playBtn" class="main-play-btn">&#9654;</button>
+          <button id="nextBtn">&#9197;</button>
+          <button id="repeatBtn">&#128257;</button>
+        </div>
+        <div class="progress-bar-container">
+          <span id="currentTime">0:00</span>
+          <input type="range" id="progressBar" value="0" min="0" max="100">
+          <span id="totalTime">4:30</span>
+        </div>
+      </div>
+
+      <div class="volume-container">
+        <span>&#128266;</span>
+        <input type="range" id="volumeSlider" min="0" max="100" value="80">
+      </div>
+
+    </footer>
+
   </div>
+
 </body>
 </html>
