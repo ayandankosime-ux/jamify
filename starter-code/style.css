@@ -7,8 +7,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
+  background-color: #121212; /* Darker theme fits local music players well */
+  color: #e1e1e1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,40 +18,39 @@ body {
 /* APP WRAPPER */
 .app-container {
   width: 95%;
-  max-width: 1200px;
-  height: 90vh;
-  background: #ffffff;
-  border-radius: 20px;
+  max-width: 1100px;
+  height: 88vh;
+  background: #181818;
+  border-radius: 16px;
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 220px 1fr;
   grid-template-rows: 1fr 90px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
 /* SIDEBAR */
 .sidebar {
-  background-color: #fbfbfd;
+  background-color: #000000;
   padding: 30px 20px;
-  border-right: 1px solid #eee;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.logo-icon {
-  font-weight: bold;
-  font-size: 1.2rem;
-  letter-spacing: -2px;
-  color: #333;
+.logo h2 {
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 0.5px;
 }
 
 .menu-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  color: #aaa;
+  color: #888;
   margin-bottom: 12px;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .nav-section ul {
@@ -59,25 +58,24 @@ body {
 }
 
 .nav-section li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .nav-section a {
   text-decoration: none;
-  color: #777;
-  font-size: 0.9rem;
+  color: #a0a0a0;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .nav-section li.active a,
 .nav-section a:hover {
-  color: #111;
-  font-weight: 700;
+  color: #ffffff;
 }
 
 .add-btn {
-  color: #999;
+  color: #1db954;
 }
 
 /* MAIN CONTENT AREA */
@@ -93,69 +91,64 @@ body {
 .top-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .top-header h1 {
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  line-height: 1.3;
+  font-size: 1.5rem;
+  color: #fff;
 }
 
 .search-box input {
   padding: 8px 16px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #333;
   border-radius: 20px;
   outline: none;
-  background-color: #f9f9f9;
+  background-color: #242424;
+  color: #fff;
   font-size: 0.85rem;
+  width: 200px;
 }
 
-/* CARDS GRID */
+.search-box input:focus {
+  border-color: #1db954;
+}
+
+/* ALBUM CARDS GRID */
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .card {
-  height: 140px;
-  border-radius: 12px;
+  height: 120px;
+  border-radius: 10px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #fff;
-  background-size: cover;
-  background-position: center;
-  position: relative;
   cursor: pointer;
+  transition: transform 0.2s;
 }
 
-/* Simple gradient fallbacks for album art */
-.card-1 {
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+.card:hover {
+  transform: translateY(-3px);
 }
 
-.card-2 {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-}
-
-.card-3 {
-  background: linear-gradient(135deg, #ff9a9e, #fecfef);
-}
-
-.card-4 {
-  background: linear-gradient(135deg, #f093fb, #f5576c);
-}
+.card-1 { background: linear-gradient(135deg, #2b5876, #4e4376); }
+.card-2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.card-3 { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
 
 .time-tag {
-  font-size: 0.75rem;
-  opacity: 0.8;
+  font-size: 0.7rem;
+  opacity: 0.7;
+  text-transform: uppercase;
 }
 
 .card-info h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .card-info p {
@@ -163,20 +156,13 @@ body {
   opacity: 0.8;
 }
 
-/* DASHBOARD LOWER SPLIT */
-.dashboard-split {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 30px;
-}
-
-.top-songs h2,
-.viral-video h2 {
+/* SONG LIST TABLE */
+.top-songs h2 {
   font-size: 1.1rem;
   margin-bottom: 15px;
+  color: #fff;
 }
 
-/* TABLE */
 .song-list {
   width: 100%;
   border-collapse: collapse;
@@ -185,18 +171,19 @@ body {
 
 .song-list th {
   text-align: left;
-  color: #aaa;
+  color: #888;
   font-weight: 500;
   padding-bottom: 10px;
+  border-bottom: 1px solid #282828;
 }
 
 .song-row {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #222;
   cursor: pointer;
 }
 
 .song-row:hover {
-  background-color: #fcfcfc;
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .song-row td {
@@ -206,18 +193,19 @@ body {
 .track-details {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .thumb {
   width: 32px;
   height: 32px;
-  background-color: #ddd;
-  border-radius: 6px;
+  background-color: #333;
+  border-radius: 4px;
 }
 
 .title {
   font-weight: 600;
+  color: #fff;
 }
 
 .artist {
@@ -225,32 +213,11 @@ body {
   color: #888;
 }
 
-/* VIDEO CARD */
-.video-card {
-  width: 100%;
-  height: 160px;
-  background: linear-gradient(135deg, #2af598, #009efd);
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.play-overlay-btn {
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
 /* PLAYER BAR */
 .player-bar {
   grid-column: 1 / -1;
-  background-color: #ffffff;
-  border-top: 1px solid #eee;
+  background-color: #181818;
+  border-top: 1px solid #282828;
   padding: 0 30px;
   display: flex;
   align-items: center;
@@ -261,32 +228,25 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 200px;
+  width: 220px;
 }
 
 .player-thumb {
   width: 42px;
   height: 42px;
   background-color: #333;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .player-title {
   font-size: 0.85rem;
   font-weight: 600;
+  color: #fff;
 }
 
 .player-artist {
   font-size: 0.75rem;
   color: #888;
-}
-
-.like-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  color: #aaa;
 }
 
 .player-controls-container {
@@ -299,7 +259,7 @@ body {
 
 .controls-buttons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -307,19 +267,24 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: #666;
-  font-size: 0.9rem;
+  color: #b3b3b3;
+  font-size: 1rem;
+}
+
+.controls-buttons button:hover {
+  color: #fff;
 }
 
 .main-play-btn {
-  background-color: #f0f0f0 !important;
-  width: 34px;
-  height: 34px;
+  background-color: #fff !important;
+  color: #000 !important;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #111 !important;
+  font-size: 0.8rem !important;
 }
 
 .progress-bar-container {
@@ -334,7 +299,8 @@ body {
 .progress-bar-container input[type="range"],
 .volume-container input[type="range"] {
   width: 100%;
-  accent-color: #333;
+  accent-color: #1db954;
+  cursor: pointer;
 }
 
 .volume-container {

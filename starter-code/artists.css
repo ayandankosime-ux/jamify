@@ -1,0 +1,68 @@
+/* ==========================================
+   ARTISTS PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* Responsive Grid for Artist Cards */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Artist Card Container */
+.artist-card {
+  background-color: #242424;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.artist-card:hover {
+  background-color: #2e2e2e;
+  transform: translateY(-4px);
+}
+
+/* Circular Avatar for Artists (Classic Spotify Style) */
+.artist-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Color Placeholders for Avatars */
+.avatar-1 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.avatar-2 { background: linear-gradient(135deg, #fa709a, #fee140); }
+.avatar-3 { background: linear-gradient(135deg, #667eea, #764ba2); }
+.avatar-4 { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
+.avatar-5 { background: linear-gradient(135deg, #2b5876, #4e4376); }
+.avatar-6 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+
+/* Artist Info Block */
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.artist-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-meta {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+}

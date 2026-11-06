@@ -1,0 +1,73 @@
+/* ==========================================
+   ALBUMS PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* Responsive Grid for Album Cards */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Album Card Container */
+.album-card {
+  background-color: #242424;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.album-card:hover {
+  background-color: #2e2e2e;
+  transform: translateY(-4px);
+}
+
+/* Square Artwork Cover */
+.album-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  background-color: #333;
+}
+
+/* Gradient Placeholders (Replace with real background-image: url(...) in JS later) */
+.cover-1 { background: linear-gradient(135deg, #2b5876, #4e4376); }
+.cover-2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.cover-3 { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
+.cover-4 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.cover-5 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.cover-6 { background: linear-gradient(135deg, #fa709a, #fee140); }
+
+/* Text Metadata Area */
+.album-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.album-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-artist {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-meta {
+  font-size: 0.7rem;
+  color: #666666;
+  margin-top: 2px;
+}

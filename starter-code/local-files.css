@@ -1,0 +1,90 @@
+/* ==========================================
+   LOCAL FILES PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* Import Drop Zone */
+.import-section {
+  width: 100%;
+}
+
+.drop-zone {
+  border: 2px dashed #333333;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #202020;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.drop-zone:hover {
+  border-color: #1db954;
+  background-color: #242424;
+}
+
+.drop-icon {
+  font-size: 2rem;
+  background-color: #2e2e2e;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-text {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.drop-text h3 {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.drop-text p {
+  font-size: 0.8rem;
+  color: #888888;
+  margin-top: 2px;
+}
+
+.browse-btn {
+  background-color: #1db954;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.browse-btn:hover {
+  background-color: #1ed760;
+  transform: scale(1.03);
+}
+
+/* Local Songs Section Header */
+.table-header-info h2 {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* File Specific Table Columns */
+.file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  background-color: #2a2a2a;
+}
+
+.file-path {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #888888;
+}

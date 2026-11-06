@@ -1,0 +1,74 @@
+/* ==========================================
+   LIKED SONGS PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* Hero Banner */
+.liked-hero {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  background: linear-gradient(135deg, #450af5, #8e2de2);
+  padding: 30px;
+  border-radius: 12px;
+  color: #ffffff;
+}
+
+.hero-icon {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.hero-details h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hero-meta {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* Songs Table Styling Overrides */
+.songs-section {
+  width: 100%;
+}
+
+.cover-1 { background: linear-gradient(135deg, #2b5876, #4e4376); }
+.cover-2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.cover-3 { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
+
+.remove-like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.remove-like-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
