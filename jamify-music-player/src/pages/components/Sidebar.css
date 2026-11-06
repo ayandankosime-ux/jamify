@@ -1,0 +1,47 @@
+.sidebar {
+  background-color: #000000;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.logo h2 {
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.menu-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-section ul {
+  list-style: none;
+}
+
+.nav-section li {
+  margin-bottom: 12px;
+}
+
+.nav-section a {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-section li.active a,
+.nav-section a:hover {
+  color: #ffffff;
+}
+
+.add-btn {
+  color: #1db954;
+}
