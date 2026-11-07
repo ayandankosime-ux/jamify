@@ -66,7 +66,9 @@ export function BottomPlaybar() {
     audioRef.current.currentTime = event.target.value;
   }
 
-
+  function handleVolumeSlider(event) {
+    audioRef.current.volume = event.target.value / 100;
+  }
 
   return (
     <>
@@ -105,7 +107,13 @@ export function BottomPlaybar() {
         <div className="volume-container">
 
           <span>🔊</span>
-          <input type="range" id="volumeSlider" min="0" max="100" />
+          <input
+            type="range"
+            id="volumeSlider"
+            min="0"
+            max="100"
+            onInput={handleVolumeSlider}
+          />
         </div>
 
         <audio
