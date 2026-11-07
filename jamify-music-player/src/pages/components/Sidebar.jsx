@@ -6,7 +6,7 @@ export function Sidebar() {
     <>
       <aside className="sidebar">
         <div className="logo">
-          <h2>MusicPlayer</h2>
+          <h2>.Jamify</h2>
         </div>
 
         <nav className="nav-section">

@@ -1,11 +1,13 @@
-import { useState, useRef, useEffect } from 'react'
-import { songs } from '../../data/data'
+import { useState, useRef, useEffect } from 'react';
+import { songs } from '../../data/data';
+import formatTime from '../../utils/formatTime';
 import './BottomPlaybar.css'
 
 export function BottomPlaybar() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -16,8 +18,7 @@ export function BottomPlaybar() {
       audioRef.current.pause();
     }
 
-
-  }, [isPlaying, currentIndex])
+  }, [isPlaying, currentIndex]);
 
   const currentSong = songs[currentIndex];
 
@@ -28,8 +29,6 @@ export function BottomPlaybar() {
   }
 
   function handlePlayButton() {
-    const song = document.getElementById('song');
-
     if (isPlaying) {
       setIsPlaying(false);
 
@@ -37,7 +36,6 @@ export function BottomPlaybar() {
       setIsPlaying(true);
 
     }
-
   }
 
   function handleNextButton() {
@@ -60,13 +58,15 @@ export function BottomPlaybar() {
     setIsPlaying(true);
   }
 
-  function formatTime(seconds) {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-
-    return `${mins}:${secs < 10 ? "0" : ''}${secs}`;
-    
+  function handleTimeUpdate() {
+    setCurrentTime(audioRef.current.currentTime);
   }
+
+  function handleProgressBar(event) {
+    audioRef.current.currentTime = event.target.value;
+  }
+
+
 
   return (
     <>
@@ -90,8 +90,14 @@ export function BottomPlaybar() {
 
           <div className="progress-bar-container">
 
-            <span id="currentTime">0:00</span>
-            <input type="range" id="progressBar" min="0" max="100" />
+            <span id="currentTime">{formatTime(currentTime)}</span>
+            <input
+              type="range"
+              id="progressBar"
+              min="0" max={duration}
+              value={currentTime}
+              onInput={handleProgressBar}
+            />
             <span id="totalTime">{formatTime(duration)}</span>
           </div>
         </div>
@@ -107,6 +113,8 @@ export function BottomPlaybar() {
           id='song'
           src={currentSong.audio}
           onLoadedMetadata={handleLoadedMetadata}
+          onTimeUpdate={handleTimeUpdate}
+          onEnded={handleNextButton}
         />
       </footer>
     </>
