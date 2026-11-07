@@ -1,19 +1,22 @@
 export const songs = [{
   title: 'Stand Tall',
   artist: 'Rapsody',
-  image: 'starter-code/images/image-1.jpeg',
+  image: 'images/image-1.jpeg',
   album: "Please Don't Cry",
+  audio: 'media/Stand Tall(MP3_160K).mp3',
   id: '1'
 }, {
   title: 'The Cut Off',
   artist: 'J. Cole',
-  image: 'starter-code/images/image-2.jpeg',
+  image: 'images/image-2.jpeg',
   album: "KOD",
-  id: '1'
+  audio: 'media/The Cut Off(MP3_160K) (1).mp3',
+  id: '2'
 }, {
   title: 'TOO COOL',
   artist: 'Dear Silas',
-  image: 'starter-code/images/image-3.jpeg',
+  image: 'images/image-3.jpeg',
   album: "SophistiRatchet: RED",
+  audio: 'media/TOO COOL (Clean Version)(MP3_160K).mp3',
   id: '3'
 },]

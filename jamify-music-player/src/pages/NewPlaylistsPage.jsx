@@ -5,45 +5,45 @@ import './NewPlaylistsPage.css'
 export function NewPlaylistsPage() {
   return (
     <>
-      <div class="app-container">
+      <div className="app-container">
 
         <Sidebar />
 
-        <main class="main-content">
+        <main className="main-content">
 
-          <header class="top-header">
+          <header className="top-header">
             <h1>Create Playlist</h1>
           </header>
 
-          <section class="create-playlist-section">
-            <div class="playlist-form-card">
-              <div class="playlist-cover-uploader" id="coverUploader" title="Click to change cover">
+          <section className="create-playlist-section">
+            <div className="playlist-form-card">
+              <div className="playlist-cover-uploader" id="coverUploader" title="Click to change cover">
                 <span>🎵</span>
                 <p>Upload Cover</p>
               </div>
 
-              <div class="playlist-inputs">
-                <div class="input-group">
+              <div className="playlist-inputs">
+                <div className="input-group">
                   <label for="playlistName">Playlist Name</label>
                   <input type="text" id="playlistName" placeholder="My Awesome Playlist" value="My Playlist #1" />
                 </div>
 
-                <div class="input-group">
+                <div className="input-group">
                   <label for="playlistDesc">Description</label>
                   <textarea id="playlistDesc" placeholder="Add an optional description">Fresh local tracks and late-night vibes.</textarea>
                 </div>
 
-                <button class="save-playlist-btn" id="savePlaylistBtn">Save Playlist</button>
+                <button className="save-playlist-btn" id="savePlaylistBtn">Save Playlist</button>
               </div>
             </div>
           </section>
 
-          <section class="songs-section">
-            <div class="table-header-info">
+          <section className="songs-section">
+            <div className="table-header-info">
               <h2>Add Tracks to Playlist</h2>
             </div>
 
-            <table class="song-list">
+            <table className="song-list">
               <thead>
                 <tr>
                   <th>#</th>
@@ -54,44 +54,44 @@ export function NewPlaylistsPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr class="song-row">
+                <tr className="song-row">
                   <td>01</td>
-                  <td class="track-details">
-                    <div class="thumb cover-1"></div>
+                  <td className="track-details">
+                    <div className="thumb cover-1"></div>
                     <div>
-                      <p class="title">Doomed</p>
-                      <p class="artist">Moses Sumney</p>
+                      <p className="title">Doomed</p>
+                      <p className="artist">Moses Sumney</p>
                     </div>
                   </td>
                   <td>Arofan</td>
                   <td>4:30</td>
-                  <td><button class="add-track-btn">+ Add</button></td>
+                  <td><button className="add-track-btn">+ Add</button></td>
                 </tr>
-                <tr class="song-row">
+                <tr className="song-row">
                   <td>02</td>
-                  <td class="track-details">
-                    <div class="thumb cover-2"></div>
+                  <td className="track-details">
+                    <div className="thumb cover-2"></div>
                     <div>
-                      <p class="title">James Curran</p>
-                      <p class="artist">Los Angeles</p>
+                      <p className="title">James Curran</p>
+                      <p className="artist">Los Angeles</p>
                     </div>
                   </td>
                   <td>Amusing Dragon</td>
                   <td>3:00</td>
-                  <td><button class="add-track-btn">+ Add</button></td>
+                  <td><button className="add-track-btn">+ Add</button></td>
                 </tr>
-                <tr class="song-row">
+                <tr className="song-row">
                   <td>03</td>
-                  <td class="track-details">
-                    <div class="thumb cover-3"></div>
+                  <td className="track-details">
+                    <div className="thumb cover-3"></div>
                     <div>
-                      <p class="title">Adam Grason</p>
-                      <p class="artist">Orlando</p>
+                      <p className="title">Adam Grason</p>
+                      <p className="artist">Orlando</p>
                     </div>
                   </td>
                   <td>Kasara</td>
                   <td>2:30</td>
-                  <td><button class="add-track-btn">+ Add</button></td>
+                  <td><button className="add-track-btn">+ Add</button></td>
                 </tr>
               </tbody>
             </table>

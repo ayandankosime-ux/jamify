@@ -5,23 +5,23 @@ import './LikedSongsPage.css'
 export function LikedSongsPage() {
   return (
     <>
-      <div class="app-container">
+      <div className="app-container">
 
         <Sidebar />
 
-        <main class="main-content">
+        <main className="main-content">
 
-          <section class="liked-hero">
-            <div class="hero-icon">❤️</div>
-            <div class="hero-details">
-              <span class="hero-type">PLAYLIST</span>
+          <section className="liked-hero">
+            <div className="hero-icon">❤️</div>
+            <div className="hero-details">
+              <span className="hero-type">PLAYLIST</span>
               <h1>Liked Songs</h1>
-              <p class="hero-meta"><span id="likedCount">3</span> tracks saved</p>
+              <p className="hero-meta"><span id="likedCount">3</span> tracks saved</p>
             </div>
           </section>
 
-          <section class="songs-section">
-            <table class="song-list">
+          <section className="songs-section">
+            <table className="song-list">
               <thead>
                 <tr>
                   <th>#</th>
@@ -32,44 +32,44 @@ export function LikedSongsPage() {
                 </tr>
               </thead>
               <tbody id="likedSongsBody">
-                <tr class="song-row" data-src="tracks/song1.mp3">
+                <tr className="song-row" data-src="tracks/song1.mp3">
                   <td>01</td>
-                  <td class="track-details">
-                    <div class="thumb cover-1"></div>
+                  <td className="track-details">
+                    <div className="thumb cover-1"></div>
                     <div>
-                      <p class="title">Doomed</p>
-                      <p class="artist">Moses Sumney</p>
+                      <p className="title">Doomed</p>
+                      <p className="artist">Moses Sumney</p>
                     </div>
                   </td>
                   <td>Arofan</td>
                   <td>4:30</td>
-                  <td><button class="remove-like-btn" title="Remove from Liked">❤️</button></td>
+                  <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
                 </tr>
-                <tr class="song-row" data-src="tracks/song2.mp3">
+                <tr className="song-row" data-src="tracks/song2.mp3">
                   <td>02</td>
-                  <td class="track-details">
-                    <div class="thumb cover-2"></div>
+                  <td className="track-details">
+                    <div className="thumb cover-2"></div>
                     <div>
-                      <p class="title">James Curran</p>
-                      <p class="artist">Los Angeles</p>
+                      <p className="title">James Curran</p>
+                      <p className="artist">Los Angeles</p>
                     </div>
                   </td>
                   <td>Amusing Dragon</td>
                   <td>3:00</td>
-                  <td><button class="remove-like-btn" title="Remove from Liked">❤️</button></td>
+                  <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
                 </tr>
-                <tr class="song-row" data-src="tracks/song3.mp3">
+                <tr className="song-row" data-src="tracks/song3.mp3">
                   <td>03</td>
-                  <td class="track-details">
-                    <div class="thumb cover-3"></div>
+                  <td className="track-details">
+                    <div className="thumb cover-3"></div>
                     <div>
-                      <p class="title">Adam Grason</p>
-                      <p class="artist">Orlando</p>
+                      <p className="title">Adam Grason</p>
+                      <p className="artist">Orlando</p>
                     </div>
                   </td>
                   <td>Kasara</td>
                   <td>2:30</td>
-                  <td><button class="remove-like-btn" title="Remove from Liked">❤️</button></td>
+                  <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
                 </tr>
               </tbody>
             </table>

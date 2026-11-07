@@ -3,9 +3,9 @@
 export function Header({ pageName, placeholder }) {
   return (
     <>
-      <header class="top-header">
+      <header className="top-header">
         <h1>{pageName}</h1>
-        <div class="search-box">
+        <div className="search-box">
           <input type="text" id="searchInput" placeholder={placeholder} />
         </div>
       </header>
