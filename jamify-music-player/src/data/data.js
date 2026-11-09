@@ -19,4 +19,4 @@ export const songs = [{
   album: "SophistiRatchet: RED",
   audio: 'media/TOO COOL (Clean Version)(MP3_160K).mp3',
   id: '3'
-}]
+}];

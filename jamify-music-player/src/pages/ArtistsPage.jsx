@@ -1,9 +1,10 @@
 import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
+import './ArtistsPage.css'
 
 
-export function ArtistsPage() {
+export function ArtistsPage({ currentIndex, setCurrentIndex }) {
   return (
     <>
       <div className="app-container">
@@ -68,7 +69,10 @@ export function ArtistsPage() {
 
         </main>
 
-        <BottomPlaybar />
+        <BottomPlaybar
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+        />
 
       </div>
     </>

@@ -2,7 +2,7 @@ import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
 import './NewPlaylistsPage.css'
 
-export function NewPlaylistsPage() {
+export function NewPlaylistsPage({ currentIndex, setCurrentIndex }) {
   return (
     <>
       <div className="app-container">
@@ -99,7 +99,10 @@ export function NewPlaylistsPage() {
 
         </main>
 
-        <BottomPlaybar />
+        <BottomPlaybar
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+        />
 
       </div>
     </>

@@ -3,9 +3,8 @@ import { songs } from '../data/data';
 import formatTime from '../utils/formatTime';
 import './BottomPlaybar.css'
 
-export function BottomPlaybar() {
+export function BottomPlaybar({ currentIndex, setCurrentIndex }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [currentVolume, setCurrentVolume] = useState(100);

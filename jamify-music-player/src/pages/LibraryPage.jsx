@@ -4,7 +4,9 @@ import { Sidebar } from '../components/Sidebar';
 import { songs } from '../data/data';
 
 
-export function LibraryPage() {
+export function LibraryPage({ currentIndex, setCurrentIndex }) {
+
+
   return (
     <>
       <div className="app-container">
@@ -17,9 +19,9 @@ export function LibraryPage() {
 
           <section className="collection-grid">
 
-            {songs.map((song) => {
+            {songs.map((song, index ) => {
               return (
-                <div className={`card card-${song.id}`} key={song.id}>
+                <div className={`card card-${index + 1}`} key={song.id} >
                   <span className="time-tag">Album</span>
                   <div className="card-info">
                     <h3>{song.album}</h3>
@@ -44,12 +46,16 @@ export function LibraryPage() {
               </thead>
               <tbody>
 
-                {songs.map((song) => {
+                {songs.map((song, index) => {
+                  function handleClick() {
+                    setCurrentIndex(index);
+                  }
+
                   return (
-                    <tr className="song-row" data-src={song.audio} key={song.id}>
-                      <td>{song.id}</td>
+                    <tr className="song-row" data-src={song.audio} key={song.id} onClick={handleClick}>
+                      <td>{index + 1}</td>
                       <td className="track-details">
-                        <img className="thumb" src={song.image}/>
+                        <img className="thumb" src={song.image} />
                         <div>
                           <p className="title">{song.title}</p>
                           <p className="artist">{song.artist}</p>
@@ -68,7 +74,10 @@ export function LibraryPage() {
         </main>
 
 
-        <BottomPlaybar />
+        <BottomPlaybar
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+        />
 
       </div>
     </>
