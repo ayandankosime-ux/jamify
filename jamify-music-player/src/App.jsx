@@ -1,13 +1,14 @@
-import { BrowserRouter, Route, Routes } from 'react-router'
-import { LibraryPage } from './pages/LibraryPage'
-import { AlbumsPage } from './pages/AlbumsPage'
-import { ArtistsPage } from './pages/ArtistsPage'
-import { LikedSongsPage } from './pages/LikedSongsPage'
+import { BrowserRouter, Route, Routes } from 'react-router';
+import { LibraryPage } from './pages/LibraryPage';
+import { AlbumsPage } from './pages/AlbumsPage';
+import { ArtistsPage } from './pages/ArtistsPage';
+import { LikedSongsPage } from './pages/LikedSongsPage';
+import { LocalFilesPage } from './pages/LocalFilesPage';
+import { NewPlaylistsPage } from './pages/NewPlaylistsPage';
 import './App.css'
-import { LocalFilesPage } from './pages/LocalFilesPage'
-import { NewPlaylistsPage } from './pages/NewPlaylistsPage'
 
 function App() {
+
 
   return (
     <>

@@ -1,5 +1,5 @@
-import { BottomPlaybar } from './components/BottomPlaybar';
-import { Sidebar } from './components/Sidebar';
+import { BottomPlaybar } from '../components/BottomPlaybar';
+import { Sidebar } from '../components/Sidebar';
 import './NewPlaylistsPage.css'
 
 export function NewPlaylistsPage() {

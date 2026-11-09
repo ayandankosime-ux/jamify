@@ -1,7 +1,6 @@
-import { Header } from './components/Header';
-import { Sidebar } from './components/Sidebar';
-import './AlbumsPage.css'
-import { BottomPlaybar } from './components/BottomPlaybar';
+import { Header } from '../components/Header';
+import { BottomPlaybar } from '../components/BottomPlaybar';
+import { Sidebar } from '../components/Sidebar';
 
 export function AlbumsPage() {
   return (

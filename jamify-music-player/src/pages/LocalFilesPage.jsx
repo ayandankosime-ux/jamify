@@ -1,6 +1,6 @@
-import { Header } from './components/Header';
-import { BottomPlaybar } from './components/BottomPlaybar';
-import { Sidebar } from './components/Sidebar';
+import { Header } from '../components/Header';
+import { BottomPlaybar } from '../components/BottomPlaybar';
+import { Sidebar } from '../components/Sidebar';
 import './LocalFilesPage.css'
 
 export function LocalFilesPage() {

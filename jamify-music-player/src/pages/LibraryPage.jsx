@@ -1,6 +1,6 @@
-import { Header } from './components/Header'
-import { BottomPlaybar } from './components/BottomPlaybar'
-import { Sidebar } from './components/Sidebar';
+import { Header } from '../components/Header';
+import { BottomPlaybar } from '../components/BottomPlaybar';
+import { Sidebar } from '../components/Sidebar';
 import { songs } from '../data/data';
 
 
@@ -13,31 +13,22 @@ export function LibraryPage() {
 
         <main className="main-content">
 
-          <Header pageName='Your Library' placeholder='Search local tracks...'/>
+          <Header pageName='Your Library' placeholder='Search local tracks...' />
 
           <section className="collection-grid">
-            
-            <div className="card card-1">
-              <span className="time-tag">Album</span>
-              <div className="card-info">
-                <h3>Doomed</h3>
-                <p>Moses Sumney</p>
-              </div>
-            </div>
-            <div className="card card-2">
-              <span className="time-tag">Album</span>
-              <div className="card-info">
-                <h3>Los Angeles</h3>
-                <p>James Curran</p>
-              </div>
-            </div>
-            <div className="card card-3">
-              <span className="time-tag">Album</span>
-              <div className="card-info">
-                <h3>Orlando</h3>
-                <p>Adam Grason</p>
-              </div>
-            </div>
+
+            {songs.map((song) => {
+              return (
+                <div className={`card card-${song.id}`} key={song.id}>
+                  <span className="time-tag">Album</span>
+                  <div className="card-info">
+                    <h3>{song.album}</h3>
+                    <p>{song.artist}</p>
+                  </div>
+                </div>
+              );
+            })}
+
           </section>
 
           <section className="top-songs">
@@ -52,49 +43,31 @@ export function LibraryPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="song-row" data-src="tracks/song1.mp3">
-                  <td>01</td>
-                  <td className="track-details">
-                    <div className="thumb"></div>
-                    <div>
-                      <p className="title">Doomed</p>
-                      <p className="artist">Moses Sumney</p>
-                    </div>
-                  </td>
-                  <td>Arofan</td>
-                  <td>4:30</td>
-                </tr>
-                <tr className="song-row" data-src="tracks/song2.mp3">
-                  <td>02</td>
-                  <td className="track-details">
-                    <div className="thumb"></div>
-                    <div>
-                      <p className="title">James Curran</p>
-                      <p className="artist">Los Angeles</p>
-                    </div>
-                  </td>
-                  <td>Amusing Dragon</td>
-                  <td>3:00</td>
-                </tr>
-                <tr className="song-row" data-src="tracks/song3.mp3">
-                  <td>03</td>
-                  <td className="track-details">
-                    <div className="thumb"></div>
-                    <div>
-                      <p className="title">Adam Grason</p>
-                      <p className="artist">Orlando</p>
-                    </div>
-                  </td>
-                  <td>Kasara</td>
-                  <td>2:30</td>
-                </tr>
+
+                {songs.map((song) => {
+                  return (
+                    <tr className="song-row" data-src={song.audio} key={song.id}>
+                      <td>{song.id}</td>
+                      <td className="track-details">
+                        <img className="thumb" src={song.image}/>
+                        <div>
+                          <p className="title">{song.title}</p>
+                          <p className="artist">{song.artist}</p>
+                        </div>
+                      </td>
+                      <td>{song.album}</td>
+                      <td>4:30</td>
+                    </tr>
+                  )
+                })}
+
               </tbody>
             </table>
           </section>
 
         </main>
 
-        
+
         <BottomPlaybar />
 
       </div>

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { songs } from '../../data/data';
-import formatTime from '../../utils/formatTime';
+import { songs } from '../data/data';
+import formatTime from '../utils/formatTime';
 import './BottomPlaybar.css'
 
 export function BottomPlaybar() {
@@ -8,6 +8,7 @@ export function BottomPlaybar() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [currentVolume, setCurrentVolume] = useState(100);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -67,7 +68,9 @@ export function BottomPlaybar() {
   }
 
   function handleVolumeSlider(event) {
-    audioRef.current.volume = event.target.value / 100;
+    const newVolume = event.target.value;
+    setCurrentVolume(newVolume);
+    audioRef.current.volume = newVolume / 100;
   }
 
   return (
@@ -96,7 +99,8 @@ export function BottomPlaybar() {
             <input
               type="range"
               id="progressBar"
-              min="0" max={duration}
+              min="0" 
+              max={duration}
               value={currentTime}
               onInput={handleProgressBar}
             />
@@ -112,6 +116,7 @@ export function BottomPlaybar() {
             id="volumeSlider"
             min="0"
             max="100"
+            value={currentVolume}
             onInput={handleVolumeSlider}
           />
         </div>
