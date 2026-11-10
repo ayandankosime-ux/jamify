@@ -4,7 +4,7 @@ import { Sidebar } from '../components/Sidebar';
 import { songs } from '../data/data';
 
 
-export function LibraryPage({ currentIndex, setCurrentIndex }) {
+export function LibraryPage({ currentIndex, setCurrentIndex, isPlaying, setIsPlaying, currentTime, setCurrentTime }) {
 
 
   return (
@@ -19,7 +19,7 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
 
           <section className="collection-grid">
 
-            {songs.map((song, index ) => {
+            {songs.map((song, index) => {
               return (
                 <div className={`card card-${index + 1}`} key={song.id} >
                   <span className="time-tag">Album</span>
@@ -77,6 +77,10 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
         <BottomPlaybar
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          currentTime={currentTime}
+          setCurrentTime={setCurrentTime}
         />
 
       </div>

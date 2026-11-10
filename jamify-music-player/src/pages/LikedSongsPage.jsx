@@ -1,5 +1,6 @@
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
+import { songs } from '../data/data';
 import './LikedSongsPage.css'
 
 export function LikedSongsPage({ currentIndex, setCurrentIndex }) {
@@ -32,45 +33,25 @@ export function LikedSongsPage({ currentIndex, setCurrentIndex }) {
                 </tr>
               </thead>
               <tbody id="likedSongsBody">
-                <tr className="song-row" data-src="tracks/song1.mp3">
-                  <td>01</td>
-                  <td className="track-details">
-                    <div className="thumb cover-1"></div>
-                    <div>
-                      <p className="title">Doomed</p>
-                      <p className="artist">Moses Sumney</p>
-                    </div>
-                  </td>
-                  <td>Arofan</td>
-                  <td>4:30</td>
-                  <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
-                </tr>
-                <tr className="song-row" data-src="tracks/song2.mp3">
-                  <td>02</td>
-                  <td className="track-details">
-                    <div className="thumb cover-2"></div>
-                    <div>
-                      <p className="title">James Curran</p>
-                      <p className="artist">Los Angeles</p>
-                    </div>
-                  </td>
-                  <td>Amusing Dragon</td>
-                  <td>3:00</td>
-                  <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
-                </tr>
-                <tr className="song-row" data-src="tracks/song3.mp3">
-                  <td>03</td>
-                  <td className="track-details">
-                    <div className="thumb cover-3"></div>
-                    <div>
-                      <p className="title">Adam Grason</p>
-                      <p className="artist">Orlando</p>
-                    </div>
-                  </td>
-                  <td>Kasara</td>
-                  <td>2:30</td>
-                  <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
-                </tr>
+
+                {songs.map((song, index) => {
+                  return (
+                    <tr className="song-row" data-src={song.audio}>
+                      <td>{index + 1}</td>
+                      <td className="track-details">
+                        <img className="thumb cover-1" src={song.image}/>
+                        <div>
+                          <p className="title">{song.title}</p>
+                          <p className="artist">{song.artist}</p>
+                        </div>
+                      </td>
+                      <td>{song.album}</td>
+                      <td>4:30</td>
+                      <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
+                    </tr>
+                  )
+                })}
+                
               </tbody>
             </table>
           </section>

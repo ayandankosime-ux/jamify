@@ -10,17 +10,75 @@ import './App.css';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LibraryPage currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>} />
-          <Route path='/albums' element={<AlbumsPage currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>} />
-          <Route path='/artists' element={<ArtistsPage currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>} />
-          <Route path='/liked-songs' element={<LikedSongsPage currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>} />
-          <Route path='/local-files' element={<LocalFilesPage currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>} />
-          <Route path='/new-playlists' element={<NewPlaylistsPage currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>} />
+          <Route
+            path='/'
+            element={
+              <LibraryPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+              />
+            }
+          />
+
+          <Route
+            path='/albums'
+            element={
+              <AlbumsPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+              />
+            }
+          />
+
+          <Route
+            path='/artists'
+            element={
+              <ArtistsPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+              />
+            }
+          />
+
+          <Route
+            path='/liked-songs'
+            element={
+              <LikedSongsPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+              />
+            }
+          />
+
+          <Route
+            path='/local-files'
+            element={
+              <LocalFilesPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+              />
+            }
+          />
+
+          <Route
+            path='/new-playlists'
+            element={<NewPlaylistsPage
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+            />
+            }
+          />
+
         </Routes>
       </BrowserRouter>
     </>
