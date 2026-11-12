@@ -22,8 +22,6 @@ function App() {
               <LibraryPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
-                isPlaying={isPlaying}
-                setIsPlaying={setIsPlaying}
               />
             }
           />
@@ -34,8 +32,6 @@ function App() {
               <AlbumsPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
-                isPlaying={isPlaying}
-                setIsPlaying={setIsPlaying}
               />
             }
           />

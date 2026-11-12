@@ -1,5 +1,6 @@
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
+import { songs } from '../data/data';
 import './NewPlaylistsPage.css'
 
 export function NewPlaylistsPage({ currentIndex, setCurrentIndex }) {
@@ -25,7 +26,7 @@ export function NewPlaylistsPage({ currentIndex, setCurrentIndex }) {
               <div className="playlist-inputs">
                 <div className="input-group">
                   <label for="playlistName">Playlist Name</label>
-                  <input type="text" id="playlistName" placeholder="My Awesome Playlist" value="My Playlist #1" />
+                  <input type="text" id="playlistName" placeholder="My Awesome Playlist" />
                 </div>
 
                 <div className="input-group">
@@ -54,45 +55,25 @@ export function NewPlaylistsPage({ currentIndex, setCurrentIndex }) {
                 </tr>
               </thead>
               <tbody>
-                <tr className="song-row">
-                  <td>01</td>
-                  <td className="track-details">
-                    <div className="thumb cover-1"></div>
-                    <div>
-                      <p className="title">Doomed</p>
-                      <p className="artist">Moses Sumney</p>
-                    </div>
-                  </td>
-                  <td>Arofan</td>
-                  <td>4:30</td>
-                  <td><button className="add-track-btn">+ Add</button></td>
-                </tr>
-                <tr className="song-row">
-                  <td>02</td>
-                  <td className="track-details">
-                    <div className="thumb cover-2"></div>
-                    <div>
-                      <p className="title">James Curran</p>
-                      <p className="artist">Los Angeles</p>
-                    </div>
-                  </td>
-                  <td>Amusing Dragon</td>
-                  <td>3:00</td>
-                  <td><button className="add-track-btn">+ Add</button></td>
-                </tr>
-                <tr className="song-row">
-                  <td>03</td>
-                  <td className="track-details">
-                    <div className="thumb cover-3"></div>
-                    <div>
-                      <p className="title">Adam Grason</p>
-                      <p className="artist">Orlando</p>
-                    </div>
-                  </td>
-                  <td>Kasara</td>
-                  <td>2:30</td>
-                  <td><button className="add-track-btn">+ Add</button></td>
-                </tr>
+
+                {songs.map((song, index) => {
+                  return (
+                    <tr className="song-row">
+                      <td>0{index + 1}</td>
+                      <td className="track-details">
+                        <img className="thumb cover-1" src={song.image}/>
+                        <div>
+                          <p className="title">{song.title}</p>
+                          <p className="artist">{song.artist}</p>
+                        </div>
+                      </td>
+                      <td>{song.album}</td>
+                      <td>4:30</td>
+                      <td><button className="add-track-btn">+ Add</button></td>
+                    </tr>
+                  )
+                })}
+
               </tbody>
             </table>
           </section>

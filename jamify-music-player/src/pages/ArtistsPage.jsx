@@ -24,7 +24,7 @@ export function ArtistsPage({ currentIndex, setCurrentIndex }) {
                   <img className="artist-avatar avatar-1" src={song.image}/>
                   <div className="artist-info">
                     <h3 className="artist-name">{song.artist}</h3>
-                    <span className="artist-meta">{song.albumCount} Album • {song.tracks}</span>
+                    <span className="artist-meta">{song.albumCount} Album • {song.tracks} Tracks</span>
                   </div>
                 </div>
               )

@@ -2,9 +2,23 @@ import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
 import { songs } from '../data/data';
+import { useState } from 'react';
 
 
-export function LibraryPage({ currentIndex, setCurrentIndex, isPlaying, setIsPlaying, currentTime, setCurrentTime }) {
+export function LibraryPage({ currentIndex, setCurrentIndex }) {
+  const [searchItem, setSearchItem] = useState('');
+  const [filteredSongs, setFilteredSongs] = useState(songs);
+
+  const handleSearchInput = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchItem(searchTerm);
+
+    const filteredList = songs.filter((song) => song.album.toLowerCase().includes(searchTerm) || song.artist.toLowerCase().includes(searchTerm) || song.title.toLowerCase().includes(searchTerm));
+
+    setFilteredSongs(filteredList);
+  }
+
+
 
 
   return (
@@ -15,11 +29,25 @@ export function LibraryPage({ currentIndex, setCurrentIndex, isPlaying, setIsPla
 
         <main className="main-content">
 
-          <Header pageName='Your Library' placeholder='Search local tracks...' />
+          {/* <Header pageName='Your Library' placeholder='Search local tracks...' /> */}
+
+          <header className="top-header">
+            <h1>Your Library</h1>
+            <div className="search-box">
+              <input
+                type="text"
+                id="searchInput"
+                value={searchItem}
+                placeholder="Search local tracks..."
+                onInput={handleSearchInput}
+              />
+
+            </div>
+          </header>
 
           <section className="collection-grid">
 
-            {songs.map((song, index) => {
+            {filteredSongs.map((song, index) => {
               return (
                 <div className={`card card-${index + 1}`} key={song.id} >
                   <span className="time-tag">Album</span>
@@ -46,7 +74,7 @@ export function LibraryPage({ currentIndex, setCurrentIndex, isPlaying, setIsPla
               </thead>
               <tbody>
 
-                {songs.map((song, index) => {
+                {filteredSongs.map((song, index) => {
                   function handleClick() {
                     setCurrentIndex(index);
                   }
@@ -77,10 +105,6 @@ export function LibraryPage({ currentIndex, setCurrentIndex, isPlaying, setIsPla
         <BottomPlaybar
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
-          isPlaying={isPlaying}
-          setIsPlaying={setIsPlaying}
-          currentTime={currentTime}
-          setCurrentTime={setCurrentTime}
         />
 
       </div>
