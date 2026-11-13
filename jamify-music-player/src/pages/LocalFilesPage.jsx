@@ -1,10 +1,9 @@
 import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
-import { songs } from '../data/data';
 import './LocalFilesPage.css'
 
-export function LocalFilesPage({ currentIndex, setCurrentIndex }) {
+export function LocalFilesPage({ currentIndex, setCurrentIndex, songs, setSongs }) {
   return (
     <>
       <div className="app-container">

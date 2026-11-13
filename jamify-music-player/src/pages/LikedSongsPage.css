@@ -59,6 +59,7 @@
 .cover-2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
 .cover-3 { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
 
+.like-btn,
 .remove-like-btn {
   background: none;
   border: none;
@@ -66,6 +67,11 @@
   font-size: 0.9rem;
   opacity: 0.8;
   transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.like-btn-image {
+  height: 17px;
+  background-color: white;
 }
 
 .remove-like-btn:hover {

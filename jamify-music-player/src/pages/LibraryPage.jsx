@@ -1,10 +1,9 @@
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
-import { songs } from '../data/data';
 import { useState } from 'react';
 
 
-export function LibraryPage({ currentIndex, setCurrentIndex }) {
+export function LibraryPage({ currentIndex, setCurrentIndex, songs }) {
   const [searchItem, setSearchItem] = useState('');
   const [filteredSongs, setFilteredSongs] = useState(songs);
 
@@ -16,6 +15,8 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
 
     setFilteredSongs(filteredList);
   }
+
+
 
 
 
@@ -79,11 +80,23 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
                     setCurrentIndex(originalIndex);
                   }
 
+                  function handleLikeButtonClick() {
+                    if (song.isLiked === true) {
+                      song.isLiked = false;
+
+                    } else {
+                      song.isLiked = true;
+
+                    }
+
+                    console.log(song.isLiked);
+                  }
+
                   return (
                     <tr className="song-row" data-src={song.audio} key={song.id} onClick={handleClick}>
                       <td>{index + 1}</td>
                       <td className="track-details">
-                        <img className="thumb" src={song.image} />
+                        <img className="thumb" src={song.albumImage} />
                         <div>
                           <p className="title">{song.title}</p>
                           <p className="artist">{song.artist}</p>
@@ -91,6 +104,13 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
                       </td>
                       <td>{song.album}</td>
                       <td>4:30</td>
+                      <td>
+                        <button
+                          className="like-btn"
+                          title="Remove from Liked" onClick={handleLikeButtonClick}>
+                          ❤️
+                        </button>
+                      </td>
                     </tr>
                   )
                 })}
@@ -105,6 +125,7 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
         <BottomPlaybar
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
+          songs={songs}
         />
 
       </div>

@@ -1,9 +1,8 @@
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
-import { songs } from '../data/data';
 import './NewPlaylistsPage.css'
 
-export function NewPlaylistsPage({ currentIndex, setCurrentIndex }) {
+export function NewPlaylistsPage({ currentIndex, setCurrentIndex, songs, setSongs }) {
   return (
     <>
       <div className="app-container">

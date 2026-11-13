@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import { songs } from '../data/data';
 import formatTime from '../utils/formatTime';
 import './BottomPlaybar.css'
 
-export function BottomPlaybar({ currentIndex, setCurrentIndex }) {
+export function BottomPlaybar({ currentIndex, setCurrentIndex, songs }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -77,7 +76,7 @@ export function BottomPlaybar({ currentIndex, setCurrentIndex }) {
       <footer className="player-bar">
 
         <div className="now-playing">
-          <img className="player-thumb" src={currentSong.image}></img>
+          <img className="player-thumb" src={currentSong.albumImage}></img>
           <div className="player-meta">
             <p className="player-title">{currentSong.title}</p>
             <p className="player-artist">{currentSong.artist}</p>

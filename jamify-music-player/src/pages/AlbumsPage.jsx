@@ -1,10 +1,9 @@
 import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
-import { songs } from '../data/data';
 import './AlbumsPage.css';
 
-export function AlbumsPage({ currentIndex, setCurrentIndex, isPlaying, setIsPlaying }) {
+export function AlbumsPage({ currentIndex, setCurrentIndex,songs }) {
   return (
     <>
       <div className="app-container">
@@ -20,11 +19,11 @@ export function AlbumsPage({ currentIndex, setCurrentIndex, isPlaying, setIsPlay
             {songs.map((song) => {
               return (
                 <div className="album-card" data-album="Arofan" key={song.id}>
-                  <img className="album-cover cover-1" src={song.image}/>
+                  <img className="album-cover cover-1" src={song.albumImage}/>
                   <div className="album-info">
                     <h3 className="album-title">{song.album}</h3>
                     <p className="album-artist">{song.artist}</p>
-                    <span className="album-meta">{song.tracks} • {song.year}</span>
+                    <span className="album-meta">{song.tracks} Tracks • {song.year}</span>
                   </div>
                 </div>
               )
@@ -37,8 +36,6 @@ export function AlbumsPage({ currentIndex, setCurrentIndex, isPlaying, setIsPlay
         <BottomPlaybar
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
-          isPlaying={isPlaying}
-          setIsPlaying={setIsPlaying}
         />
 
       </div>

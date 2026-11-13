@@ -7,11 +7,46 @@ import { LikedSongsPage } from './pages/LikedSongsPage';
 import { LocalFilesPage } from './pages/LocalFilesPage';
 import { NewPlaylistsPage } from './pages/NewPlaylistsPage';
 import './App.css';
-import { ArtistDetailPage } from './pages/ArtistDetailPage';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [songs, setSongs] = useState([{
+    title: 'Stand Tall',
+    artist: 'Rapsody',
+    albumImage: 'images/image-1.jpeg',
+    artistImage: 'images/image-artist-1.jpeg',
+    album: "Please Don't Cry",
+    albumCount: 1,
+    audio: 'media/Stand Tall(MP3_160K).mp3',
+    id: '1',
+    tracks: 13,
+    year: '2024',
+    isLiked: false
+  }, {
+    title: 'The Cut Off',
+    artist: 'J. Cole',
+    albumImage: 'images/image-2.jpeg',
+    artistImage: 'images/image-artist-2.jpeg',
+    album: "KOD",
+    albumCount: 1,
+    audio: 'media/The Cut Off(MP3_160K) (1).mp3',
+    id: '2',
+    tracks: 24,
+    year: '2019',
+    isLiked: true
+  }, {
+    title: 'TOO COOL',
+    artist: 'Dear Silas',
+    albumImage: 'images/image-3.jpeg',
+    artistImage: 'images/image-artist-3.jpeg',
+    album: "SophistiRatchet: RED",
+    albumCount: 1,
+    audio: 'media/TOO COOL (Clean Version)(MP3_160K).mp3',
+    id: '3',
+    tracks: 9,
+    year: '2025',
+    isLiked: true
+  }]);
 
   return (
     <>
@@ -23,16 +58,7 @@ function App() {
               <LibraryPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
-              />
-            }
-          />
-
-          <Route
-            path='/artist-details'
-            element={
-              <ArtistDetailPage
-                currentIndex={currentIndex}
-                setCurrentIndex={setCurrentIndex}
+                songs={songs}
               />
             }
           />
@@ -43,6 +69,7 @@ function App() {
               <AlbumsPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
+                songs={songs}
               />
             }
           />
@@ -53,6 +80,7 @@ function App() {
               <ArtistsPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
+                songs={songs}
               />
             }
           />
@@ -63,6 +91,7 @@ function App() {
               <LikedSongsPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
+                songs={songs}
               />
             }
           />
@@ -73,6 +102,8 @@ function App() {
               <LocalFilesPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
+                songs={songs}
+                setSongs={setSongs}
               />
             }
           />
@@ -82,6 +113,8 @@ function App() {
             element={<NewPlaylistsPage
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
+                songs={songs}
+                setSongs={setSongs}
             />
             }
           />

@@ -1,11 +1,10 @@
 import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
-import { songs } from '../data/data';
 import './ArtistsPage.css'
 
 
-export function ArtistsPage({ currentIndex, setCurrentIndex }) {
+export function ArtistsPage({ currentIndex, setCurrentIndex, songs }) {
   return (
     <>
       <div className="app-container">
@@ -21,7 +20,7 @@ export function ArtistsPage({ currentIndex, setCurrentIndex }) {
             {songs.map((song) => {
               return (
                 <div className="artist-card" data-artist="Moses Sumney" key={song.id}>
-                  <img className="artist-avatar avatar-1" src={song.image}/>
+                  <img className="artist-avatar avatar-1" src={song.artistImage}/>
                   <div className="artist-info">
                     <h3 className="artist-name">{song.artist}</h3>
                     <span className="artist-meta">{song.albumCount} Album • {song.tracks} Tracks</span>

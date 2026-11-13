@@ -1,9 +1,10 @@
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
-import { songs } from '../data/data';
 import './LikedSongsPage.css'
 
-export function LikedSongsPage({ currentIndex, setCurrentIndex }) {
+export function LikedSongsPage({ currentIndex, setCurrentIndex, songs }) {
+  const likedSongs = songs.filter((song) => song.isLiked === true);
+
   return (
     <>
       <div className="app-container">
@@ -17,7 +18,7 @@ export function LikedSongsPage({ currentIndex, setCurrentIndex }) {
             <div className="hero-details">
               <span className="hero-type">PLAYLIST</span>
               <h1>Liked Songs</h1>
-              <p className="hero-meta"><span id="likedCount">3</span> tracks saved</p>
+              <p className="hero-meta"><span id="likedCount">{likedSongs.length}</span> tracks saved</p>
             </div>
           </section>
 
@@ -34,24 +35,45 @@ export function LikedSongsPage({ currentIndex, setCurrentIndex }) {
               </thead>
               <tbody id="likedSongsBody">
 
-                {songs.map((song, index) => {
-                  return (
-                    <tr className="song-row" data-src={song.audio}>
-                      <td>{index + 1}</td>
-                      <td className="track-details">
-                        <img className="thumb cover-1" src={song.image}/>
-                        <div>
-                          <p className="title">{song.title}</p>
-                          <p className="artist">{song.artist}</p>
-                        </div>
-                      </td>
-                      <td>{song.album}</td>
-                      <td>4:30</td>
-                      <td><button className="remove-like-btn" title="Remove from Liked">❤️</button></td>
-                    </tr>
-                  )
-                })}
-                
+                {
+
+
+                  likedSongs.map((song, index) => {
+                    function handleClick() {
+                      const originalIndex = songs.findIndex((s) => s.id === song.id);
+
+                      setCurrentIndex(originalIndex);
+                    }
+
+                    function handleLikeButtonClick() {
+                    if (song.isLiked === true) {
+                      song.isLiked = false;
+
+                    } else {
+                      song.isLiked = true;
+
+                    }
+
+                    console.log(song.isLiked);
+                  }
+
+                    return (
+                      <tr className="song-row" data-src={song.audio} key={song.id} onClick={handleClick}>
+                        <td>{index + 1}</td>
+                        <td className="track-details">
+                          <img className="thumb cover-1" src={song.albumImage} />
+                          <div>
+                            <p className="title">{song.title}</p>
+                            <p className="artist">{song.artist}</p>
+                          </div>
+                        </td>
+                        <td>{song.album}</td>
+                        <td>4:30</td>
+                        <td><button className="remove-like-btn" title="Remove from Liked" onClick={handleLikeButtonClick}>❤️</button></td>
+                      </tr>
+                    )
+                  })}
+
               </tbody>
             </table>
           </section>
@@ -61,6 +83,7 @@ export function LikedSongsPage({ currentIndex, setCurrentIndex }) {
         <BottomPlaybar
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
+          songs={songs}
         />
 
       </div>
