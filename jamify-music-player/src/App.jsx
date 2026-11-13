@@ -7,6 +7,7 @@ import { LikedSongsPage } from './pages/LikedSongsPage';
 import { LocalFilesPage } from './pages/LocalFilesPage';
 import { NewPlaylistsPage } from './pages/NewPlaylistsPage';
 import './App.css';
+import { ArtistDetailPage } from './pages/ArtistDetailPage';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,6 +21,16 @@ function App() {
             path='/'
             element={
               <LibraryPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+              />
+            }
+          />
+
+          <Route
+            path='/artist-details'
+            element={
+              <ArtistDetailPage
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
               />

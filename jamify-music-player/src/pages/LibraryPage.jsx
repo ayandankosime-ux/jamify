@@ -1,4 +1,3 @@
-import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
 import { songs } from '../data/data';
@@ -17,7 +16,6 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
 
     setFilteredSongs(filteredList);
   }
-
 
 
 
@@ -76,7 +74,9 @@ export function LibraryPage({ currentIndex, setCurrentIndex }) {
 
                 {filteredSongs.map((song, index) => {
                   function handleClick() {
-                    setCurrentIndex(index);
+                    const originalIndex = songs.findIndex((s) => s.id === song.id);
+
+                    setCurrentIndex(originalIndex);
                   }
 
                   return (
