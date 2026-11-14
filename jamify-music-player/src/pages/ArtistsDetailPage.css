@@ -1,0 +1,227 @@
+/* ==========================================
+   ARTIST DETAIL PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* Artist Hero Banner */
+.artist-hero {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Dark Overlay for Readability */
+.artist-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.artist-hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.banner-artist-1 {
+  background: linear-gradient(135deg, #1b2735, #090a0f);
+}
+
+.verified-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.15);
+  padding: 3px 10px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.artist-hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.artist-listeners {
+  font-size: 0.85rem;
+  color: #c0c0c0;
+}
+
+/* Action Buttons */
+.artist-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.play-artist-btn {
+  background-color: #1db954;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.play-artist-btn:hover {
+  background-color: #1ed760;
+  transform: scale(1.03);
+}
+
+.follow-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.follow-btn:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Popular Songs Section */
+.songs-section {
+  width: 100%;
+}
+
+.songs-section h2,
+.artist-albums-section h2 {
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.song-list {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.song-list th {
+  text-align: left;
+  color: #888888;
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #282828;
+}
+
+.song-row {
+  border-bottom: 1px solid #222222;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.song-row:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.song-row td {
+  padding: 10px 0;
+  color: #a0a0a0;
+}
+
+.track-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.thumb {
+  width: 36px;
+  height: 36px;
+  background-color: #333333;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.artist {
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+/* Discography Grid Section */
+.artist-albums-section {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+.album-card {
+  background-color: #242424;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.album-card:hover {
+  background-color: #2e2e2e;
+  transform: translateY(-4px);
+}
+
+.album-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  background-color: #333333;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.album-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-meta {
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+/* Cover Placeholders */
+.cover-1 { background: linear-gradient(135deg, #2b5876, #4e4376); }
+.cover-2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.cover-3 { background: linear-gradient(135deg, #fc4a1a, #f7b733); }

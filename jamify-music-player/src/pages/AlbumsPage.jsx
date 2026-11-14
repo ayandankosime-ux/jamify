@@ -36,6 +36,7 @@ export function AlbumsPage({ currentIndex, setCurrentIndex,songs }) {
         <BottomPlaybar
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
+          songs={songs}
         />
 
       </div>

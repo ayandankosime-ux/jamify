@@ -3,7 +3,7 @@ import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
 import './LocalFilesPage.css'
 
-export function LocalFilesPage({ currentIndex, setCurrentIndex, songs, setSongs }) {
+export function LocalFilesPage({ currentIndex, setCurrentIndex, songs }) {
   return (
     <>
       <div className="app-container">
@@ -70,6 +70,7 @@ export function LocalFilesPage({ currentIndex, setCurrentIndex, songs, setSongs 
         <BottomPlaybar
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
+          songs={songs}
         />
 
       </div>

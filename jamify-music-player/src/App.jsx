@@ -7,6 +7,7 @@ import { LikedSongsPage } from './pages/LikedSongsPage';
 import { LocalFilesPage } from './pages/LocalFilesPage';
 import { NewPlaylistsPage } from './pages/NewPlaylistsPage';
 import './App.css';
+import { ArtistsDetailPage } from './pages/ArtistsDetailPage';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -110,13 +111,24 @@ function App() {
 
           <Route
             path='/new-playlists'
-            element={<NewPlaylistsPage
-              currentIndex={currentIndex}
-              setCurrentIndex={setCurrentIndex}
+            element={
+              <NewPlaylistsPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
                 songs={songs}
                 setSongs={setSongs}
-            />
+              />
             }
+          />
+
+          <Route
+            path='/artist-details'
+            element={
+              <ArtistsDetailPage
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+                songs={songs}
+              />}
           />
 
         </Routes>
