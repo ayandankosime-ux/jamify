@@ -38,12 +38,15 @@
 }
 
 /* Artist Info Block */
+
 .artist-info {
   display: flex;
   flex-direction: column;
   gap: 4px;
   width: 100%;
 }
+
+
 
 .artist-name {
   font-size: 0.95rem;
@@ -52,6 +55,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
 }
 
 .artist-meta {

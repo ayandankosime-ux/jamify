@@ -11,6 +11,7 @@ import { ArtistsDetailPage } from './pages/ArtistsDetailPage';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [artistIndex, setArtistIndex] = useState(0);
   const [songs, setSongs] = useState([{
     title: 'Stand Tall',
     artist: 'Rapsody',

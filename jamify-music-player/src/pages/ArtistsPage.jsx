@@ -1,11 +1,14 @@
 import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
-import './ArtistsPage.css'
+import { musicLibrary } from '../data/music';
 import { Link } from 'react-router';
+import './ArtistsPage.css';
 
 
 export function ArtistsPage({ currentIndex, setCurrentIndex, songs }) {
+  const artists = musicLibrary;
+
   return (
     <>
       <div className="app-container">
@@ -18,13 +21,13 @@ export function ArtistsPage({ currentIndex, setCurrentIndex, songs }) {
 
           <section className="artists-grid">
 
-            {songs.map((song) => {
+            {artists.map((artist) => {
               return (
-                <div className="artist-card" data-artist="Moses Sumney" key={song.id}>
-                  <img className="artist-avatar avatar-1" src={song.artistImage}/>
+                <div className="artist-card" data-artist="Moses Sumney" key={artist.artistId}>
+                  <img className="artist-avatar avatar-1" src={artist.artistImage}/>
                   <div className="artist-info">
-                    <h3 className="artist-name"><Link to='/artist-details'>{song.artist}</Link></h3>
-                    <span className="artist-meta">{song.albumCount} Album • {song.tracks} Tracks</span>
+                    <h3 ><Link to='/artist-details' className="artist-name">{artist.artist}</Link></h3>
+                    <span className="artist-meta">{artist.albums.length} Album • {} Tracks</span>
                   </div>
                 </div>
               )

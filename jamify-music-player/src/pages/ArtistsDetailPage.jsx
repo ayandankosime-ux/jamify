@@ -1,91 +1,96 @@
 import { BottomPlaybar } from "../components/BottomPlaybar";
 import { Sidebar } from "../components/Sidebar";
+import { musicLibrary } from "../data/music";
 import './ArtistsDetailPage.css';
 
 
-export function ArtistsDetailPage({currentIndex, setCurrentIndex, songs }) {
+export function ArtistsDetailPage({ currentIndex, setCurrentIndex, songs }) {
+  // const artistIndex = currentIndex;
+  const music = musicLibrary[0];
+  const { albums } = music;
+  const songTracks = albums[0].tracks;
+
+
   return (
-    <div class="app-container">
+    <div className="app-container">
 
       <Sidebar />
 
-        <main class="main-content">
+      <main className="main-content">
 
-          <section class="artist-hero banner-artist-1">
-            <div class="artist-hero-content">
-              <span class="verified-badge">✔ Verified Artist</span>
-              <h1>{songs[currentIndex].artist}</h1>
-              <p class="artist-listeners">45,210 monthly listeners</p>
-              <div class="artist-actions">
-                <button class="play-artist-btn">&#9654; Play</button>
-                <button class="follow-btn">Follow</button>
-              </div>
+        <section className="artist-hero banner-artist-1">
+          <div className="artist-hero-content">
+            <span className="verified-badge">✔ Verified Artist</span>
+            <h1>{music.artist}</h1>
+            <p className="artist-listeners">45,210 monthly listeners</p>
+            <div className="artist-actions">
+              <button className="play-artist-btn">&#9654; Play</button>
+              <button className="follow-btn">Follow</button>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section class="songs-section">
-            <h2>Popular Songs</h2>
-            <table class="song-list">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Title</th>
-                  <th>Album</th>
-                  <th>Plays</th>
-                  <th>Time</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="song-row">
-                  <td>01</td>
-                  <td class="track-details">
-                    <div class="thumb cover-1"></div>
-                    <div>
-                      <p class="title">Doomed</p>
-                      <p class="artist">Moses Sumney</p>
-                    </div>
-                  </td>
-                  <td>Arofan</td>
-                  <td>1,240,500</td>
-                  <td>4:30</td>
-                </tr>
-                <tr class="song-row">
-                  <td>02</td>
-                  <td class="track-details">
-                    <div class="thumb cover-1"></div>
-                    <div>
-                      <p class="title">Lonely World</p>
-                      <p class="artist">Moses Sumney</p>
-                    </div>
-                  </td>
-                  <td>Arofan</td>
-                  <td>890,200</td>
-                  <td>3:50</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+        <section className="songs-section">
+          <h2>Popular Songs</h2>
+          <table className="song-list">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Album</th>
+                <th>Plays</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {songTracks.map((track) => {
+                return (
+                  <tr className="song-row" key={track.trackId}>
+                    <td>01</td>
+                    <td className="track-details">
+                      <div className="thumb cover-1" src={track.albumImage} />
+                      <div>
+                        <p className="title">{track.title}</p>
+                        <p className="artist">{track.artist}</p>
+                      </div>
+                    </td>
+                    <td>{albums.albumTitle}</td>
+                    <td>1,240,500</td>
+                    <td>4:30</td>
+                  </tr>
+                )
+              })}
 
-          <section class="artist-albums-section">
-            <h2>Discography</h2>
-            <div class="albums-grid">
-              <div class="album-card">
-                <img class="album-cover cover-1" src={songs[currentIndex].albumImage}/>
-                <div class="album-info">
-                  <h3 class="album-title">{songs[currentIndex].album}</h3>
-                  <span class="album-meta">Album • {songs[currentIndex].year}</span>
+            </tbody>
+          </table>
+        </section>
+
+        <section className="artist-albums-section">
+          <h2>Discography</h2>
+          {albums.map((album) => {
+            return (
+              <div className="albums-grid" key={album.albumId}>
+                <div className="album-card">
+                  <img className="album-cover cover-1" src={album.coverArt} />
+                  <div className="album-info">
+                    <h3 className="album-title">{album.albumTitle}</h3>
+                    <span className="album-meta">Album • {album.tracks.length}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            )
+          })}
 
-        </main>
 
-        <BottomPlaybar
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
-          songs={songs}
-        />
+        </section>
+
+      </main>
+
+      <BottomPlaybar
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        songs={songs}
+      />
     </div>
   )
 }
