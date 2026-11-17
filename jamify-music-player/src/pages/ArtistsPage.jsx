@@ -24,11 +24,14 @@ export function ArtistsPage({ currentIndex, setCurrentIndex, songs }) {
             {artists.map((artist) => {
               return (
                 <div className="artist-card" data-artist="Moses Sumney" key={artist.artistId}>
-                  <img className="artist-avatar avatar-1" src={artist.artistImage}/>
-                  <div className="artist-info">
-                    <h3 ><Link to='/artist-details' className="artist-name">{artist.artist}</Link></h3>
-                    <span className="artist-meta">{artist.albums.length} Album • {} Tracks</span>
-                  </div>
+                  <Link to='/artist-details' className='link'>
+                    <img className="artist-avatar avatar-1" src={artist.artistImage} />
+                    <div className="artist-info">
+                      <h3 className="artist-name">{artist.artist}</h3>
+                      <span className="artist-meta">{artist.albums.length} Album • { } Tracks</span>
+                    </div>
+                  </Link>
+
                 </div>
               )
             })}

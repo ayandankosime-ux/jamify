@@ -1,6 +1,6 @@
-import { BottomPlaybar } from "../components/BottomPlaybar";
-import { Sidebar } from "../components/Sidebar";
-import { musicLibrary } from "../data/music";
+import { BottomPlaybar } from "../../components/BottomPlaybar";
+import { Sidebar } from "../../components/Sidebar";
+import { musicLibrary } from "../../data/music";
 import './ArtistsDetailPage.css';
 
 

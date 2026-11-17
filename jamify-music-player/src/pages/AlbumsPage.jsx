@@ -1,15 +1,16 @@
-import { Header } from '../components/Header';
+// import { Header } from '../components/Header';
 import { BottomPlaybar } from '../components/BottomPlaybar';
 import { Sidebar } from '../components/Sidebar';
 import { musicLibrary } from '../data/music';
 import { useState } from 'react';
+import { Link } from 'react-router';
 import './AlbumsPage.css';
 
-export function AlbumsPage({ currentIndex, setCurrentIndex,songs }) {
+export function AlbumsPage({ currentIndex, setCurrentIndex, songs }) {
   const [searchItem, setSearchItem] = useState('');
   const allAlbums = musicLibrary.flatMap(artist => artist.albums.map(album => ({
     ...album,
-      artist: artist.artist
+    artist: artist.artist
   })));
   const [filteredAlbums, setFilteredAlbums] = useState(allAlbums);
 
@@ -22,7 +23,7 @@ export function AlbumsPage({ currentIndex, setCurrentIndex,songs }) {
     setFilteredAlbums(filteredAlbumsList);
     console.log(searchTerm);
   }
-  
+
 
 
   return (
@@ -36,7 +37,7 @@ export function AlbumsPage({ currentIndex, setCurrentIndex,songs }) {
           {/*<Header pageName='Albums' placeholder='Search albums...' />*/}
 
           <header className="top-header">
-            <h1>Your Library</h1>
+            <h1>Albums</h1>
             <div className="search-box">
               <input
                 type="text"
@@ -54,13 +55,17 @@ export function AlbumsPage({ currentIndex, setCurrentIndex,songs }) {
             {filteredAlbums.map((album) => {
               return (
                 <div className="album-card" data-album="Arofan" key={album.albumId}>
-                  <img className="album-cover cover-1" src={album.coverArt}/>
-                  <div className="album-info">
-                    <h3 className="album-title">{album.albumTitle}</h3>
-                    <p className="album-artist">{album.artist}</p>
-                    <span className="album-meta">{album.tracks.length} Tracks • {album.year}</span>
-                  </div>
+                  <Link to='/album-details' className='link'>
+                    <img className="album-cover cover-1" src={album.coverArt} />
+                    <div className="album-info">
+                      <h3 className="album-title">{album.albumTitle}</h3>
+                      <p className="album-artist">{album.artist}</p>
+                      <span className="album-meta">{album.tracks.length} Tracks • {album.year}</span>
+                    </div>
+                  </Link>
                 </div>
+
+
               )
             })}
 
@@ -74,7 +79,7 @@ export function AlbumsPage({ currentIndex, setCurrentIndex,songs }) {
           songs={songs}
         />
 
-      </div>
+      </div >
     </>
   )
 }
